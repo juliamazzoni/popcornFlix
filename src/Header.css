@@ -6,8 +6,9 @@
 }
 
 .header h1 {
-  padding-top: 10px;
+  padding-left: 50px;
+  padding-top: 20px;
   margin: 0;
   color: red;
-  font-size: 40px;
+  font-size: 35px;
 }

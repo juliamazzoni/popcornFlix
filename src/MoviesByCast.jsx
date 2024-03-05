@@ -26,15 +26,17 @@ export default function MoviesByCast(props) {
 
   return (
     <section className="section">
-      <h1>Search movies by cast<span className="sub-text">{moviesByCast.length} movies found </span></h1>
 
-      <form onSubmit={handleSubmit}>
-        <input onChange={handleChange} type="text" value={cast}/>
-        <button>find movie</button>
-      </form>
+      <div className="flex-container">
+        <h1>Search movies by cast<span className="sub-text">{moviesByCast.length} movies found </span></h1>
+
+        <form onSubmit={handleSubmit}>
+          <input onChange={handleChange} type="text" value={cast} placeholder="search by cast"/>
+          <button>find movie</button>
+        </form>
+      </div>
 
       <div className="row-container">
-        
         {moviesByCast.map(movies => 
           <MovieTvCard key={movies.id} onAdd={props.onAdd} movies={ movies }/>
         )}

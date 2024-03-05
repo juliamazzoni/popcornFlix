@@ -8,12 +8,12 @@ export default function Favourites(props) {
 
   return (
     <section className="section">
-      <h1>Favourites <span className="sub-text">You have {favouriteCount} items in your list</span> </h1>
+      <h1> Favourites ❤️ <span className="sub-text">You have {favouriteCount} items in your list</span> </h1>
       <div className="row-container">
         
         {props.favourites.map(movies => 
           <FavouriteCard key={movies.id} onDelete={props.onDelete} movies={ movies }/>
-        )}
+       )}
         
       </div>
     </section>

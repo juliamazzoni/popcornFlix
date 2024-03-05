@@ -9,6 +9,7 @@ export default function TrendingMovies(props) {
     <section className="section">
       <h1>Trending movies</h1>
       <div className="row-container">
+      
         {props.trendingMovies.map(movies => 
           <MovieTvCard key={movies.id} onAdd={props.onAdd} movies={ movies }/>
         )}
