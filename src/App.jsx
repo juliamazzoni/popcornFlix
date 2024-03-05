@@ -14,7 +14,9 @@ import _ from 'lodash';
 
 function App() {
  
-  const [favourites, setFavourites] = useState([])
+  let storedItems = JSON.parse(localStorage.getItem('favourites'))
+
+  const [favourites, setFavourites] = useState(storedItems)
   const [trendingMovies, setTrendingMovies] = useState([])
   const [url, setUrl] = useState('')
 
@@ -33,15 +35,18 @@ function App() {
 
   function onAdd(movie) {
     setFavourites([movie, ...favourites])
+  
+    localStorage.setItem('favourites', JSON.stringify([movie, ...favourites]))
   }
 
   function onDelete(movie){
     let filteredFavourites = favourites.filter(movies => movies != movie)
 
     setFavourites(filteredFavourites)
+    localStorage.setItem('favourites', JSON.stringify(filteredFavourites))
   }
 
-  
+
   return (
     <>
       <Header url={url}/> 
